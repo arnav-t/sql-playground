@@ -13,7 +13,7 @@ def split_cols(line):
 
 def create_cmd(name, col_names, vals):
   cmd = f'INSERT INTO {name} ({", ".join(col_names)})\n'
-  vals = [f"'{val}'" for val in vals]
+  vals = [f"'{val}'" if val != 'null' else 'null' for val in vals]
   cmd += f'{TAB}VALUES ({", ".join(vals)});\n'
   return cmd
 
