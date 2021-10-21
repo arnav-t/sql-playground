@@ -22,7 +22,6 @@ output = ''
 n = len(lines)
 i = 0
 while i < n:
-  
   if not (lines[i].startswith('|') or lines[i].startswith('+') or len(lines[i]) == 0):
     name = lines[i]
     cols = {}
