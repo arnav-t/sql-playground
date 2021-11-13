@@ -1,10 +1,20 @@
-Activity
+Product
 +--------------+---------+
 | Column Name  | Type    |
 +--------------+---------+
-| player_id    | int     |
-| device_id    | int     |
-| event_date   | date    |
-| games_played | int     |
+| product_id   | int     |
+| product_name | varchar |
+| unit_price   | int     |
 +--------------+---------+
 
+Sales
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| seller_id   | int     |
+| product_id  | int     |
+| buyer_id    | int     |
+| sale_date   | date    |
+| quantity    | int     |
+| price       | int     |
++------ ------+---------+

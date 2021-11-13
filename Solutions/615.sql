@@ -1,0 +1,2 @@
+select x.month as pay_mmonth, x.department_id, case when x.avg = y.avg then 'same' when x.avg > y.avg then 'higher' else 'lower' end as comparison from (select e.department_id, date_trunc('month', s.pay_date) as month, avg(s.amount) from salary s join employee e on s.employee_id = e.employee_id group by e.department_id, date_trunc('month', s.pay_date)) x join (select avg(amount), date_trunc('month', pay_date) as month from salary group by month) y on x.month =
+y.month;
